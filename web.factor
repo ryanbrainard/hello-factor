@@ -1,5 +1,5 @@
-USING: environment http http.server threads furnace.actions ;
-[ "PORT" os-env httpd ] in-thread
+USING: environment accessors math.parser http http.server threads furnace.actions ;
+[ "PORT" os-env string>number httpd ] in-thread
 <action> [
   <response>
     200 >>code
