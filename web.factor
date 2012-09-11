@@ -1,4 +1,4 @@
-USING: environment accessors math.parser http http.server threads furnace.actions ;
+USING: namespaces environment accessors math.parser http http.server threads furnace.actions ;
 [ "PORT" os-env string>number httpd ] in-thread
 <action> [
   <response>
