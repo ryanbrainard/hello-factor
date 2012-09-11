@@ -1,2 +1,2 @@
-web: factor -i=web.image work/web.factor
+web: factor work/web.factor
 
