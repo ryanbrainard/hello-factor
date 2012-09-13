@@ -1,4 +1,6 @@
-USING: namespaces environment accessors math.parser http http.server threads furnace.actions html.forms http.server.dispatchers http.server.responses urls ;
+USING: accessors furnace.actions http.server
+http.server.dispatchers http.server.responses io.servers kernel
+namespaces environment math.parser ;
 
 IN: webapps.hello
 
@@ -12,9 +14,9 @@ TUPLE: hello < dispatcher ;
     hello new-dispatcher
         <hello-action> "" add-responder ;
 
-: run-hello ( -- http-server )
+: run-hello ( -- )
     <hello>
         main-responder set-global
-    "PORT" os-env string>number httpd ;
+    "PORT" os-env string>number httpd wait-for-server ;
 
 MAIN: run-hello
