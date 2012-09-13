@@ -1,2 +1,2 @@
-web: ./factor work/web.factor
+web: ./factor -run=webabbs.hello
 
